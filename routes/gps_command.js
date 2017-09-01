@@ -4,6 +4,7 @@
 
 var express = require('express');
 var router = express.Router();
+var rabbit = require('./../my_modules/rabbit');
 const EXCHANGE = "hyz.program.command";
 var channel;
 
