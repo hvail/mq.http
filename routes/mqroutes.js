@@ -39,7 +39,7 @@ function delRoutes(req, res, next) {
     var name = data.Name;
     var exchange = data.Exchange;
     redis.HDEL(EXCHANGE_ROUTES_HASH, exchange + "." + name);
-    var queue = exchange + ".mq-web." + name;
+    var queue = "mq-web." + exchange + "." + name;
     _connectionRabbit(function (ch) {
         ch.deleteQueue(queue);
     });
