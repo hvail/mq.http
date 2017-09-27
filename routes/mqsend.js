@@ -29,6 +29,7 @@ var _sendMsg = function (ch, ex, tag, msg) {
 
 var sendMessage = function (req, res, next) {
     var data = req.body;
+    console.log(data);
     if (!channel)
         _connectionRabbit(function (_ch) {
             channel = _ch;

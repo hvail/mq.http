@@ -19,8 +19,12 @@ app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+var fs = require('fs');
+var __dirname = process.env.LogPath || "";
+console.log(__dirname);
+var accessLogStream = fs.createWriteStream(__dirname + 'interface.mq.rabbit', {flags: 'a'});
 
-app.use(logger('dev'));
+app.use(logger('dev', {stream: accessLogStream}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
