@@ -1,4 +1,5 @@
-/**
+/***
+ * 消息发送的主接口
  * Created by hvail on 2017/9/1.
  */
 var express = require('express');
@@ -35,6 +36,7 @@ var sendMessage = function (req, res, next) {
         });
     else
         _sendMsg(channel, data.Exchange, data.MsgTag, data.Context);
+    res.send("1");
 }
 
 /* GET users listing. */

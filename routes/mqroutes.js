@@ -1,5 +1,5 @@
 /***
- * 队列消息
+ * 队列传送规则，内部WebHook系统使用
  * 将上传的信息记录到Redis中
  * Created by hvail on 2017/9/1.
  */

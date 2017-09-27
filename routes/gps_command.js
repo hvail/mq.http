@@ -39,3 +39,4 @@ router.post('/', sendCommand);
 router.delete('/:cmdId');
 
 module.exports = router;
+
