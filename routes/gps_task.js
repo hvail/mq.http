@@ -50,6 +50,10 @@ var passTask = function (req, res) {
     });
 }
 
+var demo = function (req, res, next) {
+    res.send("demo gps task");
+}
+
 // 这里是表决通过或失败修改
 // var setTask = function (req, res) {
 //     http.PostData(req, function (err, cmd) {
@@ -62,6 +66,7 @@ var passTask = function (req, res) {
 
 // 任务启动
 router.post('/', sendTask);
+router.get('/', demo);
 // 表决完成
 router.post('/pass', passTask);
 
