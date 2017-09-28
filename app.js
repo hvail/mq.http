@@ -10,6 +10,7 @@ var users = require('./routes/users');
 var mq_send = require('./routes/mqsend');
 var mq_routes = require('./routes/mqroutes');
 var gps_command = require('./routes/gps_command');
+var gps_task = require('./routes/gps_task');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/task', gps_task);
 app.use('/command', gps_command);
 app.use('/mq/send', mq_send);
 app.use('/mq/routes', mq_routes);
