@@ -33,21 +33,19 @@ var sendMessage = function (target, msg, ex) {
 }
 
 var sendTask = function (req, res) {
-    http.PostData(req, function (err, cmd) {
-        var msg = JSON.stringify(cmd);
-        var target = cmd.SerialNumber;
-        sendMessage(target, msg, exchangeName);
-        res.status(200).send("1");
-    });
+    var cmd = req.body;
+    var msg = JSON.stringify(cmd);
+    var target = cmd.SerialNumber;
+    sendMessage(target, msg, exchangeName);
+    res.status(200).send("1");
 }
 
 var passTask = function (req, res) {
-    http.PostData(req, function (err, cmd) {
-        var msg = JSON.stringify(cmd);
-        var target = cmd.SerialNumber;
-        sendMessage(target, msg, exchangeDoneName);
-        res.status(200).send("1");
-    });
+    var cmd = req.body;
+    var msg = JSON.stringify(cmd);
+    var target = cmd.SerialNumber;
+    sendMessage(target, msg, exchangeDoneName);
+    res.status(200).send("1");
 }
 
 var demo = function (req, res, next) {
