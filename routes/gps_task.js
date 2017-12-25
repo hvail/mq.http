@@ -1,17 +1,17 @@
 /**
  * Created by hvail on 2017/9/28.
  */
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var rabbit = require('./../my_modules/rabbit');
-var http = require('./../my_modules/http');
-var exchangeName = "hyz.program.task";
-var exchangeDoneName = "hyz.program.taskdone";
-var app;
-var channel;
+const rabbit = require('./../my_modules/rabbit');
+const http = require('./../my_modules/http');
+const exchangeName = "hyz.program.task";
+const exchangeDoneName = "hyz.program.taskdone";
+let app;
+let channel;
 
-var buildChannel = function (cb) {
+let buildChannel = function (cb) {
     rabbit.BuildChannel(exchangeName, function (err, ch) {
         if (err) {
             console.log(err);
@@ -19,9 +19,9 @@ var buildChannel = function (cb) {
         }
         cb && cb(ch);
     });
-}
+};
 
-var sendMessage = function (target, msg, ex) {
+let sendMessage = function (target, msg, ex) {
     if (!channel) {
         buildChannel(function (ch) {
             channel = ch;
@@ -30,33 +30,33 @@ var sendMessage = function (target, msg, ex) {
         })
     } else
         channel.publish(ex, ex + "." + target, new Buffer(msg));
-}
+};
 
-var sendTask = function (req, res) {
-    var cmd = req.body;
-    var msg = JSON.stringify(cmd);
-    var target = cmd.SerialNumber;
+let sendTask = function (req, res) {
+    let cmd = req.body;
+    let msg = JSON.stringify(cmd);
+    let target = cmd.SerialNumber;
     sendMessage(target, msg, exchangeName);
     res.status(200).send("1");
-}
+};
 
-var passTask = function (req, res) {
-    var cmd = req.body;
-    var msg = JSON.stringify(cmd);
-    var target = cmd.SerialNumber;
+let passTask = function (req, res) {
+    let cmd = req.body;
+    let msg = JSON.stringify(cmd);
+    let target = cmd.SerialNumber;
     sendMessage(target, msg, exchangeDoneName);
     res.status(200).send("1");
-}
+};
 
-var demo = function (req, res, next) {
+let demo = function (req, res, next) {
     res.send("demo gps task");
-}
+};
 
 // 这里是表决通过或失败修改
-// var setTask = function (req, res) {
+// let setTask = function (req, res) {
 //     http.PostData(req, function (err, cmd) {
-//         var msg = JSON.stringify(cmd);
-//         var target = cmd.SerialNumber;
+//         let msg = JSON.stringify(cmd);
+//         let target = cmd.SerialNumber;
 //         sendMessage(target, msg, exchangeDoneName);
 //         res.status(200).send("1");
 //     });
@@ -71,7 +71,7 @@ router.post('/pass', passTask);
 module.exports = router;
 
 
-// var WebApplication = function (application) {
+// let WebApplication = function (application) {
 //     app = application;
 // }
 //

@@ -1,13 +1,10 @@
-var mq = require("amqplib/callback_api");
-var _env = process.env;
-var host = _env.MQ_RABBIT_HOST || "112.74.51.81",
-    name = _env.MQ_RABBIT_NAME || "hvail",
-    pwd = _env.MQ_RABBIT_PASSWORD || "hvail",
-    URI = _env.MQ_URI || "amqp://hvail:hvail@112.74.51.81:5672?heartbeat=10&connection_timeout=10000";
+const mq = require("amqplib/callback_api");
+const _env = process.env;
+const URI = _env.MQ_URI || "amqp://hvail:hvail@112.74.51.81:5672?heartbeat=10&connection_timeout=10000";
 // URI = "amqp://hvail:hvail@112.74.51.81:5672?heartbeat=10&connection_timeout=10000";
 
 console.log(URI);
-var buildChannel = function (cb) {
+let buildChannel = function (cb) {
     mq.connect(URI, function (err, conn) {
         if (err) {
             cb && cb(err);
@@ -20,7 +17,7 @@ var buildChannel = function (cb) {
 }
 
 
-var buildExchange = function (change, cb) {
+let buildExchange = function (change, cb) {
     console.log(URI);
     mq.connect(URI, function (err, conn) {
         if (err) {

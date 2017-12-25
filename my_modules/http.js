@@ -1,5 +1,5 @@
-var sendData = function (req, cb) {
-    var body = '', obj;
+let sendData = function (req, cb) {
+    let body = '', obj;
     req.on('data', function (chunk) {
         body += chunk;
     });
@@ -20,9 +20,9 @@ var sendData = function (req, cb) {
         }
         cb && cb(null, obj);
     });
-}
+};
 
-var handlerPost = function (req, res, cb) {
+let handlerPost = function (req, res, cb) {
     sendData(req, function (err, data) {
         if (err) {
             res.status(412).send(err);
@@ -30,7 +30,7 @@ var handlerPost = function (req, res, cb) {
             cb && cb(data);
         }
     });
-}
+};
 
 module.exports.PostData = sendData;
 module.exports.HandlerPost = handlerPost;

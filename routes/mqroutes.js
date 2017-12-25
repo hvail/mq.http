@@ -3,29 +3,29 @@
  * 将上传的信息记录到Redis中
  * Created by hvail on 2017/9/1.
  */
-var express = require('express');
-var redis = require('./../my_modules/redishelp');
-var rabbit = require('./../my_modules/rabbit');
-var router = express.Router();
+const express = require('express');
+const redis = require('./../my_modules/redishelp');
+const rabbit = require('./../my_modules/rabbit');
+const router = express.Router();
 const EXCHANGE_ROUTES_HASH = "mq.exchange.routes.hash";
 const EXCHANGE_NAME = "hyz.server.webmq";
 const TAG_QUEUE_ADD = "hyz.server.webmq.add";
 const TAG_QUEUE_DEL = "hyz.server.webmq.del";
-var channel;
+let channel;
 
-var _connectionRabbit = function (cb) {
+let _connectionRabbit = function (cb) {
     rabbit.BuildChannel(function (err, ch) {
         if (err) return;
         cb && cb(ch);
     })
-}
+};
 
 /* Bind Exchange Queue Route. */
 function bindRoutes(req, res, next) {
-    var data = req.body;
-    var name = data.Name;
-    var exchange = data.Exchange;
-    var json = JSON.stringify(data);
+    let data = req.body;
+    let name = data.Name;
+    let exchange = data.Exchange;
+    let json = JSON.stringify(data);
     redis.HSET(EXCHANGE_ROUTES_HASH, exchange + "." + name, json);
     // 向rabbit发布一条信息
     _connectionRabbit(function (ch) {
@@ -35,11 +35,11 @@ function bindRoutes(req, res, next) {
 }
 
 function delRoutes(req, res, next) {
-    var data = req.query;
-    var name = data.Name;
-    var exchange = data.Exchange;
+    let data = req.query;
+    let name = data.Name;
+    let exchange = data.Exchange;
     redis.HDEL(EXCHANGE_ROUTES_HASH, exchange + "." + name);
-    var queue = "mq-web." + exchange + "." + name;
+    let queue = "mq-web." + exchange + "." + name;
     _connectionRabbit(function (ch) {
         ch.deleteQueue(queue);
     });
@@ -48,9 +48,9 @@ function delRoutes(req, res, next) {
 
 function getAll(req, res, next) {
     redis.HGETALL(EXCHANGE_ROUTES_HASH, function (err, result) {
-        var data = [];
+        let data = [];
         if (result)
-            for (var k in result) {
+            for (let k in result) {
                 data.push(JSON.parse(result[k]));
             }
         res.send(data);

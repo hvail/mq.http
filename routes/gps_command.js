@@ -1,21 +1,20 @@
 /**
  * Created by hvail on 2017/9/1.
  */
-
-var express = require('express');
-var router = express.Router();
-var rabbit = require('./../my_modules/rabbit');
+const express = require('express');
+const router = express.Router();
+const rabbit = require('./../my_modules/rabbit');
 const EXCHANGE = "hyz.program.command";
-var channel;
+let channel;
 
-var _connectionRabbit = function (cb) {
+let _connectionRabbit = function (cb) {
     rabbit.BuildChannel(function (err, ch) {
         channel = ch;
         cb && cb(ch);
-    })
-}
+    });
+};
 
-var _sendMsg = function (target, msg) {
+let _sendMsg = function (target, msg) {
     if (channel)
         channel.publish(EXCHANGE, EXCHANGE + "." + target, new Buffer(msg));
     else {
@@ -23,15 +22,15 @@ var _sendMsg = function (target, msg) {
             _sendMsg(target, msg);
         });
     }
-}
+};
 
-var sendCommand = function (req, res, next) {
-    var cmd = req.body;
-    var msg = JSON.stringify(cmd);
-    var target = cmd.Target;
+let sendCommand = function (req, res, next) {
+    let cmd = req.body;
+    let msg = JSON.stringify(cmd);
+    let target = cmd.Target;
     _sendMsg(target, msg);
     res.send("1");
-}
+};
 
 /* GET users listing. */
 router.get('/');
