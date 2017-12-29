@@ -52,7 +52,7 @@ let errorShow3 = function (err, a, b, c) {
 let _sendMsg = function (ch, ex, tag, msg) {
     try {
         ch.checkExchange(ex, function (err, ok) {
-            console.log(ex + " " + ok);
+            // console.log(ex + " " + ok);
             if (err || !ok) {
                 // rabbit.BuildExchange(ex);
                 // ch.assertExchange(ex, 'topic', {durable: false});
