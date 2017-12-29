@@ -56,6 +56,7 @@ let _sendMsg = function (ch, ex, tag, msg) {
             if (err || !ok) {
                 // rabbit.BuildExchange(ex);
                 // ch.assertExchange(ex, 'topic', {durable: false});
+                channel = null;
                 console.log(ex);
                 console.log(err);
             } else {
