@@ -28,6 +28,7 @@ let _sendMsg = function (ch, ex, tag, msg) {
     try {
         let ss = ch.checkExchange(ex, function (err, b, c) {
             if (err) {
+                rabbit.BuildExchange(ex);
                 console.log(err);
                 console.log(JSON.stringify(err));
             }
@@ -35,12 +36,7 @@ let _sendMsg = function (ch, ex, tag, msg) {
             console.log(c);
             console.log("============================================");
         });
-        ch.publish(ex, tag, new Buffer(msg), function (err, a, b) {
-            console.log(err);
-            console.log(a);
-            console.log(b);
-            console.log("============================================");
-        });
+        ch.publish(ex, tag, new Buffer(msg));
     } catch (e) {
         console.log(e);
     }
