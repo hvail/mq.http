@@ -38,8 +38,8 @@
       <file leaf-file-name="mqsend.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/mqsend.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+            <state relative-caret-position="467">
+              <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -48,20 +48,8 @@
       <file leaf-file-name="channel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/channel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="93" column="6" lean-forward="false" selection-start-line="93" selection-start-column="2" selection-end-line="93" selection-end-column="6" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="connection.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/connection.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="467" column="32" lean-forward="true" selection-start-line="467" selection-start-column="32" selection-end-line="467" selection-end-column="32" />
+            <state relative-caret-position="385">
+              <caret line="449" column="41" lean-forward="true" selection-start-line="449" selection-start-column="41" selection-end-line="449" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -72,8 +60,8 @@
       <file leaf-file-name="channel_model.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/channel_model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="120" column="16" lean-forward="false" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="16" />
+            <state relative-caret-position="310">
+              <caret line="157" column="25" lean-forward="false" selection-start-line="157" selection-start-column="14" selection-end-line="157" selection-end-column="25" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -136,8 +124,6 @@
     <findStrings>
       <find>http</find>
       <find>BuildChannel</find>
-      <find>publish</find>
-      <find>sendMessage</find>
       <find>var</find>
       <find>defs</find>
       <find>ExchangeDeclareOk</find>
@@ -146,6 +132,9 @@
       <find>fromCallback</find>
       <find>Exchange</find>
       <find>_rpc</find>
+      <find>publish</find>
+      <find>sendMessage</find>
+      <find>connection</find>
     </findStrings>
     <replaceStrings>
       <replace>let</replace>
@@ -244,6 +233,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interface.mq.rabbit.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interface.mq.rabbit.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interface.mq.rabbit.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interface.mq.rabbit.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amqplib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interface.mq.rabbit.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interface.mq.rabbit.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amqplib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -703,12 +746,12 @@
       <workItem from="1514089707122" duration="609000" />
       <workItem from="1514164126552" duration="605000" />
       <workItem from="1514166366528" duration="4722000" />
-      <workItem from="1514510444002" duration="6599000" />
+      <workItem from="1514510444002" duration="7206000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62644000" />
+    <option name="totallyTimeSpent" value="63251000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3278" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1060,16 +1103,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/connection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="467" column="32" lean-forward="true" selection-start-line="467" selection-start-column="32" selection-end-line="467" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/defs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -1104,26 +1137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/channel_model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="120" column="16" lean-forward="false" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/channel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="93" column="6" lean-forward="false" selection-start-line="93" selection-start-column="2" selection-end-line="93" selection-end-column="6" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1140,10 +1153,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/channel_model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="157" column="25" lean-forward="false" selection-start-line="157" selection-start-column="14" selection-end-line="157" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="545" column="0" lean-forward="true" selection-start-line="545" selection-start-column="0" selection-end-line="545" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/channel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="449" column="41" lean-forward="true" selection-start-line="449" selection-start-column="41" selection-end-line="449" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/mqsend.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+        <state relative-caret-position="467">
+          <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
           <folding />
         </state>
       </provider>

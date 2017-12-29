@@ -51,7 +51,8 @@ let errorShow3 = function (err, a, b, c) {
 
 let _sendMsg = function (ch, ex, tag, msg) {
     try {
-        ch.checkExchange(ex, function (err, b, c) {
+        ch.checkExchange(ex, function (err, ok) {
+            console.log(ok);
             if (err) {
                 rabbit.BuildExchange(ex);
                 // ch.assertExchange(ex, 'topic', {durable: false});
@@ -63,8 +64,12 @@ let _sendMsg = function (ch, ex, tag, msg) {
                 console.log(b);
                 console.log('_sendMsg 63');
                 console.log(c);
-                ch.publish(ex, tag, new Buffer(msg), errorShow, errorShow2, errorShow3);
+                ch.publish(ex, tag, new Buffer(msg), {});
             }
+        }).then(function (err, ok) {
+            console.log("ch.checkExchange then");
+            console.log(err);
+            console.log(ok);
         });
         // ch.publish(ex, tag, new Buffer(msg), errorShow, errorShow2, errorShow3);
     } catch (e) {
