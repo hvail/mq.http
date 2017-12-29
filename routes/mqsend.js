@@ -25,7 +25,11 @@ let _connectionRabbit = function (cb) {
 };
 
 let _sendMsg = function (ch, ex, tag, msg) {
-    ch.publish(ex, tag, new Buffer(msg));
+    try {
+        ch.publish(ex, tag, new Buffer(msg));
+    } catch (e) {
+        console.log(e);
+    }
 };
 
 let sendMessage = function (req, res, next) {

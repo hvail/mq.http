@@ -18,7 +18,7 @@ let buildChannel = function (cb) {
 
 
 let buildExchange = function (change, cb) {
-    console.log(URI);
+    // console.log(URI);
     mq.connect(URI, function (err, conn) {
         if (err) {
             cb && cb(err);
