@@ -59,18 +59,16 @@ let _sendMsg = function (ch, ex, tag, msg) {
                 console.log(ex);
                 console.log(err);
             } else {
-                console.log(err);
                 console.log('_sendMsg 61');
-                console.log(b);
-                console.log('_sendMsg 63');
-                console.log(c);
+                console.log(err);
                 ch.publish(ex, tag, new Buffer(msg), {});
             }
-        }).then(function (err, ok) {
-            console.log("ch.checkExchange then");
-            console.log(err);
-            console.log(ok);
         });
+        //     .then(function (err, ok) {
+        //     console.log("ch.checkExchange then");
+        //     console.log(err);
+        //     console.log(ok);
+        // });
         // ch.publish(ex, tag, new Buffer(msg), errorShow, errorShow2, errorShow3);
     } catch (e) {
         console.log(e);
