@@ -58,7 +58,9 @@ let _sendMsg = function (ch, ex, tag, msg) {
                 console.log(ex);
                 console.log(err);
             } else {
+                console.log('_sendMsg 61');
                 console.log(b);
+                console.log('_sendMsg 63');
                 console.log(c);
                 ch.publish(ex, tag, new Buffer(msg), errorShow, errorShow2, errorShow3);
             }
