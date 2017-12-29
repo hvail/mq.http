@@ -30,9 +30,8 @@ let _sendMsg = function (ch, ex, tag, msg) {
             console.log(a);
             console.log(b);
             console.log(c);
+            console.log("============================================");
         });
-        console.log(` ${ex} checkExchange : `);
-        console.log(` ${ss.length} `);
         ch.publish(ex, tag, new Buffer(msg));
     } catch (e) {
         console.log(e);
