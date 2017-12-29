@@ -55,13 +55,11 @@ let _sendMsg = function (ch, ex, tag, msg) {
             console.log(ex + " " + ok);
             if (err || !ok) {
                 // rabbit.BuildExchange(ex);
-                ch.assertExchange(ex, 'topic', {durable: false});
+                // ch.assertExchange(ex, 'topic', {durable: false});
                 console.log(ex);
                 console.log(err);
             } else {
-                console.log('_sendMsg 61');
-                console.log(err);
-                // ch.publish(ex, tag, new Buffer(msg));
+                ch.publish(ex, tag, new Buffer(msg));
             }
         });
         //     .then(function (err, ok) {
