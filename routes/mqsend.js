@@ -26,15 +26,12 @@ let _connectionRabbit = function (cb) {
 
 let _sendMsg = function (ch, ex, tag, msg) {
     try {
-        let ss = ch.checkExchange(ex, function (err, b, c) {
+        ch.checkExchange(ex, function (err, b, c) {
             if (err) {
-                rabbit.BuildExchange(ex);
+                ch.assertExchange(ex, 'topic', {durable: false});
                 console.log(err);
                 console.log(JSON.stringify(err));
             }
-            console.log(b);
-            console.log(c);
-            console.log("============================================");
         });
         ch.publish(ex, tag, new Buffer(msg));
     } catch (e) {
