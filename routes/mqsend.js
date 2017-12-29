@@ -19,6 +19,7 @@ let _DEFAULT_CLASS = {
 let _connectionRabbit = function (cb) {
     rabbit.BuildChannel(function (err, ch) {
         channel = ch;
+        if (err) console.log(err);
         cb && cb(ch);
     });
 };
@@ -29,7 +30,6 @@ let _sendMsg = function (ch, ex, tag, msg) {
 
 let sendMessage = function (req, res, next) {
     let data = req.body;
-    console.log(data);
     if (!channel)
         _connectionRabbit(function (_ch) {
             channel = _ch;
@@ -42,7 +42,6 @@ let sendMessage = function (req, res, next) {
 
 let buildExchange = function (req, res, next) {
     let data = req.body;
-    console.log(data);
     rabbit.BuildExchange(data.ExChangeName);
     res.send("1");
 };
