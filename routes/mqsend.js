@@ -54,8 +54,8 @@ let _sendMsg = function (ch, ex, tag, msg) {
         ch.checkExchange(ex, function (err, ok) {
             console.log(ex + " " + ok);
             if (err || !ok) {
-                rabbit.BuildExchange(ex);
-                // ch.assertExchange(ex, 'topic', {durable: false});
+                // rabbit.BuildExchange(ex);
+                ch.assertExchange(ex, 'topic', {durable: false});
                 console.log(ex);
                 console.log(err);
             } else {
