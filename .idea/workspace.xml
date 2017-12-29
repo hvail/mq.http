@@ -28,8 +28,8 @@
       <file leaf-file-name="mqsend.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/mqsend.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+            <state relative-caret-position="482">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -62,8 +62,8 @@
       <file leaf-file-name="channel_model.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/channel_model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="20" />
+            <state relative-caret-position="160">
+              <caret line="120" column="16" lean-forward="false" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="16" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -144,6 +144,7 @@
       <find>checkExchange</find>
       <find>Args</find>
       <find>fromCallback</find>
+      <find>Exchange</find>
       <find>_rpc</find>
     </findStrings>
     <replaceStrings>
@@ -702,12 +703,12 @@
       <workItem from="1514089707122" duration="609000" />
       <workItem from="1514164126552" duration="605000" />
       <workItem from="1514166366528" duration="4722000" />
-      <workItem from="1514510444002" duration="5371000" />
+      <workItem from="1514510444002" duration="5620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61416000" />
+    <option name="totallyTimeSpent" value="61665000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1103,26 +1104,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/channel_model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/channel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="93" column="6" lean-forward="false" selection-start-line="93" selection-start-column="2" selection-end-line="93" selection-end-column="6" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_modules/redishelp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1139,10 +1120,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/channel_model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="120" column="16" lean-forward="false" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/amqplib/lib/channel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="93" column="6" lean-forward="false" selection-start-line="93" selection-start-column="2" selection-end-line="93" selection-end-column="6" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/mqsend.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        <state relative-caret-position="482">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>

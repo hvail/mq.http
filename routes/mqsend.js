@@ -25,6 +25,30 @@ let _connectionRabbit = function (cb) {
     });
 };
 
+let errorShow = function (err, a, b, c) {
+    console.log('errorShow')
+    console.log(err);
+    console.log(a);
+    console.log(b);
+    console.log(c);
+};
+
+let errorShow2 = function (err, a, b, c) {
+    console.log('errorShow2')
+    console.log(err);
+    console.log(a);
+    console.log(b);
+    console.log(c);
+};
+
+let errorShow3 = function (err, a, b, c) {
+    console.log('errorShow3')
+    console.log(err);
+    console.log(a);
+    console.log(b);
+    console.log(c);
+};
+
 let _sendMsg = function (ch, ex, tag, msg) {
     try {
         ch.checkExchange(ex, function (err, b, c) {
@@ -36,7 +60,7 @@ let _sendMsg = function (ch, ex, tag, msg) {
             } else {
                 console.log(b);
                 console.log(c);
-                ch.publish(ex, tag, new Buffer(msg));
+                ch.publish(ex, tag, new Buffer(msg), errorShow, errorShow2, errorShow3);
             }
         });
     } catch (e) {
