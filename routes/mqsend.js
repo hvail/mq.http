@@ -63,7 +63,7 @@ let _sendMsg = function (ch, ex, tag, msg) {
         //         ch.publish(ex, tag, new Buffer(msg), errorShow, errorShow2, errorShow3);
         //     }
         // });
-        ch.publish(ex, tag, new Buffer(msg), errorShow, errorShow2, errorShow3);
+        // ch.publish(ex, tag, new Buffer(msg), errorShow, errorShow2, errorShow3);
     } catch (e) {
         console.log(e);
     }
