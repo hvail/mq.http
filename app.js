@@ -1,18 +1,18 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var mq_send = require('./routes/mqsend');
-var mq_routes = require('./routes/mqroutes');
-var gps_command = require('./routes/gps_command');
-var gps_task = require('./routes/gps_task');
+const index = require('./routes/index');
+const users = require('./routes/users');
+const mq_send = require('./routes/mqsend');
+const mq_routes = require('./routes/mqroutes');
+const gps_command = require('./routes/gps_command');
+const gps_task = require('./routes/gps_task');
 
-var app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,10 +20,8 @@ app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-var fs = require('fs');
-var __dirname = process.env.LogPath || "";
-console.log(__dirname);
-var accessLogStream = fs.createWriteStream(__dirname + 'interface.mq.rabbit', {flags: 'a'});
+let fs = require('fs');
+let accessLogStream = fs.createWriteStream(__dirname + 'interface.mq.rabbit', {flags: 'a'});
 
 app.use(logger('dev', {stream: accessLogStream}));
 app.use(bodyParser.json());
@@ -40,7 +38,7 @@ app.use('/mq/routes', mq_routes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-    var err = new Error('Not Found');
+    let err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
