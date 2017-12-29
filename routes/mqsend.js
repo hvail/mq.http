@@ -29,7 +29,7 @@ let _sendMsg = function (ch, ex, tag, msg) {
     try {
         ch.checkExchange(ex, function (err, b, c) {
             if (err) {
-                rabbit.BuildExchange(data.ExChangeName);
+                rabbit.BuildExchange(ex);
                 // ch.assertExchange(ex, 'topic', {durable: false});
                 console.log(err);
                 console.log(JSON.stringify(err));
