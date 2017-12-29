@@ -31,9 +31,8 @@ let _sendMsg = function (ch, ex, tag, msg) {
         //     console.log(b);
         //     console.log(c);
         // });
-        ch.publish(ex, tag, new Buffer(msg)).catch(function (e) {
-            console.log(e);
-        });
+        let ss = ch.publish(ex, tag, new Buffer(msg));
+        console.log(ss);
     } catch (e) {
         console.log(e);
     }
