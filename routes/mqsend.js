@@ -50,28 +50,7 @@ let errorShow3 = function (err, a, b, c) {
 };
 
 let _sendMsg = function (ch, ex, tag, msg) {
-    try {
-        ch.checkExchange(ex, function (err, ok) {
-            // console.log(ex + " " + ok);
-            if (err || !ok) {
-                // rabbit.BuildExchange(ex);
-                // ch.assertExchange(ex, 'topic', {durable: false});
-                channel = null;
-                console.log(ex);
-                console.log(err);
-            } else {
-                ch.publish(ex, tag, new Buffer(msg));
-            }
-        });
-        //     .then(function (err, ok) {
-        //     console.log("ch.checkExchange then");
-        //     console.log(err);
-        //     console.log(ok);
-        // });
-        // ch.publish(ex, tag, new Buffer(msg), errorShow, errorShow2, errorShow3);
-    } catch (e) {
-        console.log(e);
-    }
+    ch.publish(ex, tag, new Buffer(msg));
 };
 
 let sendMessage = function (req, res, next) {
