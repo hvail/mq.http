@@ -26,12 +26,15 @@ let _connectionRabbit = function (cb) {
 
 let _sendMsg = function (ch, ex, tag, msg) {
     try {
-        // let ss = ch.checkExchange(ex, function (a, b, c) {
-        //     console.log(a);
-        //     console.log(b);
-        //     console.log(c);
-        //     console.log("============================================");
-        // });
+        let ss = ch.checkExchange(ex, function (err, b, c) {
+            if (err) {
+                console.log(err);
+                console.log(JSON.stringify(err));
+            }
+            console.log(b);
+            console.log(c);
+            console.log("============================================");
+        });
         ch.publish(ex, tag, new Buffer(msg), function (err, a, b) {
             console.log(err);
             console.log(a);
