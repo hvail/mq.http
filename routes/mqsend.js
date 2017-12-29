@@ -58,6 +58,7 @@ let _sendMsg = function (ch, ex, tag, msg) {
                 console.log(ex);
                 console.log(err);
             } else {
+                console.log(err);
                 console.log('_sendMsg 61');
                 console.log(b);
                 console.log('_sendMsg 63');
