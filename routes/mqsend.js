@@ -51,18 +51,18 @@ let errorShow3 = function (err, a, b, c) {
 
 let _sendMsg = function (ch, ex, tag, msg) {
     try {
-        // ch.checkExchange(ex, function (err, b, c) {
-        //     if (err) {
-        //         rabbit.BuildExchange(ex);
-        //         // ch.assertExchange(ex, 'topic', {durable: false});
-        //         console.log(err);
-        //         console.log(JSON.stringify(err));
-        //     } else {
-        //         console.log(b);
-        //         console.log(c);
-        //         ch.publish(ex, tag, new Buffer(msg), errorShow, errorShow2, errorShow3);
-        //     }
-        // });
+        ch.checkExchange(ex, function (err, b, c) {
+            if (err) {
+                rabbit.BuildExchange(ex);
+                // ch.assertExchange(ex, 'topic', {durable: false});
+                console.log(ex);
+                console.log(err);
+            } else {
+                console.log(b);
+                console.log(c);
+                ch.publish(ex, tag, new Buffer(msg), errorShow, errorShow2, errorShow3);
+            }
+        });
         // ch.publish(ex, tag, new Buffer(msg), errorShow, errorShow2, errorShow3);
     } catch (e) {
         console.log(e);
