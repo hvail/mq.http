@@ -6,6 +6,7 @@ let express = require('express');
 let router = express.Router();
 let rabbit = require('./../my_modules/rabbit');
 let channel;
+let exchangeMap = new Map();
 
 let _DEFAULT_CLASS = {
     // 交换机名
@@ -31,9 +32,12 @@ let _sendMsg = function (ch, ex, tag, msg) {
                 ch.assertExchange(ex, 'topic', {durable: false});
                 console.log(err);
                 console.log(JSON.stringify(err));
+            } else {
+                console.log(b);
+                console.log(c);
+                ch.publish(ex, tag, new Buffer(msg));
             }
         });
-        ch.publish(ex, tag, new Buffer(msg));
     } catch (e) {
         console.log(e);
     }
