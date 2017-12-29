@@ -26,9 +26,9 @@ let _connectionRabbit = function (cb) {
 
 let _sendMsg = function (ch, ex, tag, msg) {
     try {
-        console.log(` ${ex} checkExchange : ${ch.checkExchange(ex)}`);
-        let ss = ch.publish(ex, tag, new Buffer(msg));
-        console.log(ss);
+        let ss = ch.checkExchange(ex);
+        console.log(` ${ex} checkExchange : ${JSON.stringify(ss)}`);
+        ch.publish(ex, tag, new Buffer(msg));
     } catch (e) {
         console.log(e);
     }
