@@ -28,7 +28,7 @@ let _sendMsg = function (ch, ex, tag, msg) {
     try {
         let ss = ch.checkExchange(ex);
         console.log(` ${ex} checkExchange : `);
-        console.log(` ${ss} `);
+        console.log(` ${ss[0]} `);
         ch.publish(ex, tag, new Buffer(msg));
     } catch (e) {
         console.log(e);
