@@ -1,6 +1,6 @@
 const mq = require("amqplib/callback_api");
 const _env = process.env;
-const URI = _env.MQ_URI || "amqp://hvail:hvail@112.74.51.81:5672?heartbeat=10&connection_timeout=10000";
+const URI = _env.MQ_URI || "amqp://hvail:hvail@112.74.32.79:5672?heartbeat=10&connection_timeout=10000";
 // URI = "amqp://hvail:hvail@112.74.51.81:5672?heartbeat=10&connection_timeout=10000";
 
 console.log(URI);
@@ -14,7 +14,7 @@ let buildChannel = function (cb) {
             cb && cb(err, ch);
         });
     });
-}
+};
 
 
 let buildExchange = function (change, cb) {

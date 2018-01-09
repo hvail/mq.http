@@ -12,7 +12,8 @@ let app;
 let channel;
 
 let buildChannel = function (cb) {
-    rabbit.BuildChannel(exchangeName, function (err, ch) {
+    // rabbit.BuildChannel(exchangeName, function (err, ch) {
+    rabbit.BuildChannel(function (err, ch) {
         if (err) {
             console.log(err);
             return;
